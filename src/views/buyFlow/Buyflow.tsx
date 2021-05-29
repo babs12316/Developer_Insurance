@@ -17,7 +17,7 @@ const PRODUCT_IDS_TO_NAMES = {
   [ProductIds.devIns]: 'Developer Insurance',
 }
 
-const Buyflow: React.FC<BuyflowProps> = (props) => {
+const Buyflow: React.FC<BuyflowProps> = ({productId}) => {
   const [currentStep, setStep] = useState('name')
   const [collectedData, updateData] = useState({
     email: '',
@@ -49,7 +49,7 @@ const Buyflow: React.FC<BuyflowProps> = (props) => {
 
   return (
     <>
-      <h4>Buying {PRODUCT_IDS_TO_NAMES[props.productId]}</h4>
+      <h4>Buying {PRODUCT_IDS_TO_NAMES[productId]}</h4>
        {gotoCurrentStep(currentStep)}
     </>
   )

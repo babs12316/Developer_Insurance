@@ -4,7 +4,7 @@ interface EmailStepProps {
   cb: (field: string, value: string) => void
 }
 
-const EmailStep: React.FC<EmailStepProps> = (props) => {
+const EmailStep: React.FC<EmailStepProps> = ({cb}) => {
   const [email, setEmail] = useState('')
   return (
     <>
@@ -16,7 +16,7 @@ const EmailStep: React.FC<EmailStepProps> = (props) => {
           value={email}
         ></input>
       </div>
-      <button onClick={() => props.cb('email', email)}>Next</button>
+      <button onClick={() =>cb('email', email)}>Next</button>
     </>
   )
 }
