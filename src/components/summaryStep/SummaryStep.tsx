@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 interface SummaryStepProps {
   collectedData: {
@@ -20,7 +19,7 @@ const SummaryStep: React.FC<SummaryStepProps> = ({ collectedData }) => {
       <div>Email: {collectedData.email}</div>
       <div>Age: {collectedData.age}</div>
       <div>
-        <Link to="/purchased=dev_ins">Purchase</Link>
+        <a href="/purchased=dev_ins">Purchase</a>
       </div>
     </>
   )
