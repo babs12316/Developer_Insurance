@@ -3,9 +3,11 @@ import logo from './logo.svg'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Buyflow, { ProductIds } from './views/buyFlow/Buyflow'
+import ErrorBoundary from './errorBoundary/ErrorBoundary'
 
 const App = () => {
   return (
+    <ErrorBoundary>
     <Router>
       <div className="App">
         <header className="App-header">
@@ -22,6 +24,7 @@ const App = () => {
         </Switch>
       </div>
     </Router>
+    </ErrorBoundary>
   )
 }
 
