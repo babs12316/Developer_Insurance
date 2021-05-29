@@ -12,9 +12,7 @@ const EmailStep: React.FC<EmailStepProps> = (props) => {
         Email:{' '}
         <input
           type="email"
-          onChange={({ target: { value } }) => {
-            setEmail(value)
-          }}
+          onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{setEmail(e.target.value)}}
           value={email}
         ></input>
       </div>

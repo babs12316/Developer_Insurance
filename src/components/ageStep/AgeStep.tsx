@@ -12,9 +12,7 @@ const AgeStep: React.FC<AgeStepProps> = (props) => {
         Age:{' '}
         <input
           type="number"
-          onChange={({ target: { value } }) => {
-            setAge(Number(value))
-          }}
+          onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{setAge(Number(e.target.value))}}
           value={age}
         ></input>
       </div>
