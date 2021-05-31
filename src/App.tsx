@@ -1,8 +1,8 @@
-import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Buyflow, { ProductIds } from './views/buyFlow/Buyflow'
+import { ProductIds } from './shared/Constants'
+import Buyflow from './views/buyFlow/Buyflow'
 import ErrorBoundary from './errorBoundary/ErrorBoundary'
 import NoMatch from './views/noMatch/NoMatch'
 
@@ -19,6 +19,10 @@ const App = () => {
               <Buyflow productId={ProductIds.devIns} />
             </Route>
             <Route exact path="/">
+              <p>Welcome to Getsafe's Developer Insurance</p>
+              <Link to="/buy/insurance_dev">Get started!</Link>
+            </Route>
+            <Route exact path="/purchased=dev_ins">
               <p>Welcome to Getsafe's Developer Insurance</p>
               <Link to="/buy/insurance_dev">Get started!</Link>
             </Route>
