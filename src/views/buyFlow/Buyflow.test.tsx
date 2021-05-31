@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import Buyflow, { ProductIds } from './Buyflow'
+import Buyflow from './Buyflow'
+import {ProductIds} from '../../shared/Constants'
 
 test('renders Buying product text', () => {
   render(<Buyflow productId={ProductIds.devIns} />)
