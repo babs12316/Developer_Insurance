@@ -4,7 +4,7 @@ interface AgeStepProps {
   cb: (field: string, value: number) => void
 }
 
-const AgeStep: React.FC<AgeStepProps> = (props) => {
+const AgeStep: React.FC<AgeStepProps> = ({cb}) => {
   const [age, setAge] = useState(0)
   return (
     <>
@@ -12,13 +12,11 @@ const AgeStep: React.FC<AgeStepProps> = (props) => {
         Age:{' '}
         <input
           type="number"
-          onChange={({ target: { value } }) => {
-            setAge(Number(value))
-          }}
+          onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{setAge(Number(e.target.value))}}
           value={age}
         ></input>
       </div>
-      <button onClick={() => props.cb('age', age)}>Next</button>
+      <button onClick={() => cb('age', age)}>Next</button>
     </>
   )
 }
